@@ -1,0 +1,35 @@
+#include<iostream>
+#include<cctype> // for isalpha and tolower functions
+
+using namespace std;
+
+int main() {
+    char inputChar;
+
+    // Input a character from the user
+    cout << "Enter a character: ";
+    cin >> inputChar;
+
+    // Check if the input is a letter
+    if (!isalpha(inputChar)) {
+        cout << "Error: Not a valid letter." << endl;
+    } else {
+        // Convert the character to lowercase
+        char lowercaseChar = tolower(inputChar);
+
+        // Use switch-case to check if the character is a vowel or a consonant
+        switch (lowercaseChar) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                cout << "The character is a vowel." << endl;
+                break;
+            default:
+                cout << "The character is a consonant." << endl;
+        }
+    }
+
+    return 0;
+}
